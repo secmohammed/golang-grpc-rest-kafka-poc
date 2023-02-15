@@ -13,6 +13,7 @@ type cr struct {
 func (cr cr) Get(id uuid.UUID) (*entities.Company, error) {
     var c entities.Company
     result := cr.c.Database().Get().Where("id = ?", id).First(&c)
+
     return &c, result.Error
 }
 
@@ -52,7 +53,11 @@ func (cr cr) Update(company *entities.UpdateCompanyInput) (*entities.Company, er
 }
 
 func (cr cr) Delete(id uuid.UUID) error {
-    return cr.c.Database().Get().Delete(&entities.Company{}, id).Error
+    result := cr.c.Database().Get().Where("id = ?", id).Delete(&entities.Company{})
+    if result.RowsAffected == 0 {
+        return ErrCompanyNotFound
+    }
+    return result.Error
 }
 
 func NewCompanyRepository(c types.Container) CompanyRepository {

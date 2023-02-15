@@ -5,11 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12319c78-1751-4e32-bb50-23766cadeb77" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.test.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handlers/rest/middleware/guest.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/integration/company/base.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/integration/company/create_company_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/integration/company/delete_company_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/integration/company/get_all_companies_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/integration/company/get_company_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/integration/company/update_company_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/integration/user/base.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/integration/user/login_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/integration/user/register_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/utils.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repository/company/implementation.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/repository/company/implementation.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/usecase/company/implement.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/usecase/company/implement.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/usecase/user/implement.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/usecase/user/implement.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/local.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/local.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/entities/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/port.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/port.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/company.go" beforeDir="false" afterPath="$PROJECT_DIR$/entities/company.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handlers/rest/companies/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/rest/companies/handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/rest/users/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/rest/users/handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/rest.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/rest.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/bind_data.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/bind_data.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/errors.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/errors.go" afterDir="false" />
     </list>
@@ -44,27 +64,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.vendoring.notification.had.been.shown&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mohammed/go/src/github.com/secmohammed/golang-kafka-grpc-poc&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "RunOnceActivity.go.vendoring.notification.had.been.shown": "true",
+    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "/Users/mohammed/go/src/github.com/secmohammed/golang-kafka-grpc-poc",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -74,14 +95,38 @@
       <recent name="$PROJECT_DIR$/companies/config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tests/integration/user" />
+      <recent name="$PROJECT_DIR$/tests/integration/company" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/companies/app/repository/company" />
       <recent name="$PROJECT_DIR$/companies/app/usecase/company" />
-      <recent name="$PROJECT_DIR$/companies/handlers/grpc/proto" />
-      <recent name="$PROJECT_DIR$/companies/config" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Go Test.TestCannotCreateCompanyIfTokenNotPassed in github.com/secmohammed/golang-kafka-grpc-poc/tests/integration/company">
+    <configuration name="TestCannotCreateCompanyIfTokenNotPassed in github.com/secmohammed/golang-kafka-grpc-poc/tests/integration/company" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="golang-kafka-grpc-poc" />
+      <working_directory value="$PROJECT_DIR$/tests/integration/company" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/secmohammed/golang-kafka-grpc-poc/tests/integration/company" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestCannotCreateCompanyIfTokenNotPassed\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestLoginWithValidCredentials in github.com/secmohammed/golang-kafka-grpc-poc/tests/integration" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="golang-kafka-grpc-poc" />
+      <working_directory value="$PROJECT_DIR$/tests/integration" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/secmohammed/golang-kafka-grpc-poc/tests/integration" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestLoginWithValidCredentials\E$" />
+      <method v="2" />
+    </configuration>
     <configuration name="docker-compose.yaml.db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -97,6 +142,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestCannotCreateCompanyIfTokenNotPassed in github.com/secmohammed/golang-kafka-grpc-poc/tests/integration/company" />
+        <item itemvalue="Go Test.TestLoginWithValidCredentials in github.com/secmohammed/golang-kafka-grpc-poc/tests/integration" />
         <item itemvalue="Docker.docker-compose.yaml.db: Compose Deployment" />
       </list>
     </recent_temporary>

@@ -1,0 +1,20 @@
+app:
+  env: local
+  jwt:
+    secret: "test"
+    expiration: "60m"
+  db:
+    username: "postgres"
+    password: "postgres"
+    database: "company_test"
+    host: "localhost"
+    port: 5432
+    log: true
+    sync: false
+  rest:
+    port: "8001"
+  grpc:
+    port: "8002"
+  log:
+    json: true
+    debug: false

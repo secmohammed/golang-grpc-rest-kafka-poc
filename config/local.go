@@ -19,13 +19,17 @@ func readLocalConfig() (*viper.Viper, error) {
 	v.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
 	v.AddConfigPath(".")
 	v.SetConfigName("config")
-
-	if env := os.Getenv("ENV"); env == "local" {
+	env := os.Getenv("ENV")
+	if env == "local" {
 		log.Infof("Environment: %s", env)
 		v.SetConfigName("config.local")
 
 	}
-
+	if env == "test" {
+		log.Infof("Environment: %s", env)
+		v.AddConfigPath("../../../")
+		v.SetConfigName("config.test")
+	}
 	err := v.ReadInConfig()
 	if err != nil {
 		log.Fatalf("error reading config file or env variable '%s' ", err.Error())

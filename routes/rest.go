@@ -83,8 +83,8 @@ func (r *rest) registerUserRoutes() {
 	ucc := user2.NewUseCase(uc, r.c.Config())
 	uh := users.NewUserHandler(ucc)
 	rg := r.r.Group("/api/auth")
-	rg.POST("/login", uh.Login)
-	rg.POST("/register", uh.Register)
+	rg.POST("/login", middleware.GuestUser(), uh.Login)
+	rg.POST("/register", middleware.GuestUser(), uh.Register)
 
 }
 func (r *rest) registerCompanyRoutes() {
@@ -96,7 +96,7 @@ func (r *rest) registerCompanyRoutes() {
 	ch := companies.NewCompanyHandler(uc)
 	rg := r.r.Group("/api/companies")
 	rg.POST("/", middleware.AuthUser(ucc, r.c.Config()), ch.CreateCompany)
-	rg.PATCH("/:name", middleware.AuthUser(ucc, r.c.Config()), ch.UpdateCompany)
+	rg.PATCH("/:id", middleware.AuthUser(ucc, r.c.Config()), ch.UpdateCompany)
 	rg.GET("/", ch.GetCompanies)
 	rg.GET("/:id", ch.GetCompany)
 	rg.DELETE("/:id", middleware.AuthUser(ucc, r.c.Config()), ch.DeleteCompany)

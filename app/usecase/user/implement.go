@@ -4,7 +4,6 @@ import (
 	"errors"
 	"fmt"
 	"github.com/google/uuid"
-	"github.com/secmohammed/golang-kafka-grpc-poc/app/repository/company"
 	"github.com/secmohammed/golang-kafka-grpc-poc/app/repository/user"
 	"github.com/secmohammed/golang-kafka-grpc-poc/config"
 	"github.com/secmohammed/golang-kafka-grpc-poc/entities"
@@ -71,10 +70,10 @@ func (uc *usecase) GetUserByID(id uuid.UUID) (*entities.User, error) {
 func (uc *usecase) GetUserByEmail(email string) (*entities.User, error) {
 	data, err := uc.uc.GetUserByEmail(email)
 	if err != nil {
-		if errors.Is(err, company.ErrCompanyNotFound) {
-			return nil, ErrCompanyNotFound
+		if errors.Is(err, user.ErrUserNotFound) {
+			return nil, utils.NewNotFound("user", email)
 		}
-		return nil, utils.NewNotFound("user", email)
+		return nil, utils.NewBadRequest(err.Error())
 	}
 	return data, nil
 }

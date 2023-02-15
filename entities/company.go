@@ -23,7 +23,7 @@ type CreateCompanyInput struct {
 	CompanyType CompanyType `json:"company_type" binding:"required,oneof=Corporations NonProfit Cooperative SoleProprietorship"`
 }
 type UpdateCompanyInput struct {
-	ID          uuid.UUID   `json:"id" binding:"required,uuid4"`
+	ID          uuid.UUID   `json:"id"`
 	Name        string      `json:"name" binding:"required,min=4"`
 	Description string      `json:"description" binding:"required,min=30"`
 	Registered  bool        `json:"registered" binding:"required,boolean"`

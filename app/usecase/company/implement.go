@@ -6,6 +6,7 @@ import (
 	"github.com/google/uuid"
 	"github.com/secmohammed/golang-kafka-grpc-poc/app/repository/company"
 	"github.com/secmohammed/golang-kafka-grpc-poc/entities"
+	"gorm.io/gorm"
 )
 
 type usecase struct {
@@ -19,7 +20,7 @@ func NewUseCase(cr company.CompanyRepository) UseCase {
 func (uc *usecase) Get(id uuid.UUID) (*entities.Company, error) {
 	data, err := uc.cr.Get(id)
 	if err != nil {
-		if errors.Is(err, company.ErrCompanyNotFound) {
+		if errors.Is(err, gorm.ErrRecordNotFound) {
 			return nil, ErrCompanyNotFound
 		}
 		return nil, fmt.Errorf("%w: %v", ErrUnexpected, err.Error())
@@ -54,7 +55,11 @@ func (uc *usecase) Update(in *entities.UpdateCompanyInput) (*entities.Company, e
 func (uc *usecase) Delete(id uuid.UUID) error {
 	err := uc.cr.Delete(id)
 	if err != nil {
+		if errors.Is(err, company.ErrCompanyNotFound) {
+			return ErrCompanyNotFound
+		}
 		return fmt.Errorf("%w: %v", ErrUnexpected, err.Error())
 	}
+
 	return err
 }

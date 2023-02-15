@@ -42,11 +42,12 @@ func (h *restHandler) GetCompanies(c *gin.Context) {
 func (h *restHandler) GetCompany(c *gin.Context) {
 	id, err := uuid.Parse(c.Param("id"))
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, utils.NewBadRequest(err.Error()))
+		c.JSON(http.StatusUnprocessableEntity, utils.NewBadRequest(err.Error()))
 		return
 
 	}
 	data, err := h.cu.Get(id)
+	fmt.Println(err)
 	if err == nil {
 		c.JSON(http.StatusOK, SuccessResponse{Data: data})
 	} else {
@@ -93,7 +94,7 @@ func (h *restHandler) UpdateCompany(c *gin.Context) {
 func (h *restHandler) DeleteCompany(c *gin.Context) {
 	id, err := uuid.Parse(c.Param("id"))
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, utils.NewBadRequest(err.Error()))
+		c.JSON(http.StatusUnprocessableEntity, utils.NewBadRequest(err.Error()))
 		return
 
 	}
@@ -101,6 +102,10 @@ func (h *restHandler) DeleteCompany(c *gin.Context) {
 	if err == nil {
 		c.JSON(http.StatusOK, SuccessResponse{Data: fmt.Sprintf("id: %s. successfully deleted", id)})
 	} else {
-		c.JSON(http.StatusInternalServerError, utils.NewInternal())
+		if errors.Is(err, company2.ErrCompanyNotFound) {
+			c.JSON(http.StatusNotFound, utils.NewNotFound("company", id.String()))
+		} else {
+			c.JSON(http.StatusInternalServerError, utils.NewInternal())
+		}
 	}
 }

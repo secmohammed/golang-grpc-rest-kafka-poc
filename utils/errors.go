@@ -53,6 +53,7 @@ func (e *Error) Status() int {
 		return http.StatusRequestEntityTooLarge
 	case UnsupportedMediaType:
 		return http.StatusUnsupportedMediaType
+
 	default:
 		return http.StatusInternalServerError
 	}
