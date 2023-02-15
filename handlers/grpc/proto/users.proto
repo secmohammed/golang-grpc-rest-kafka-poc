@@ -1,0 +1,39 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "pb/users";
+
+message User {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+    google.protobuf.Timestamp CreatedAt = 4;
+    google.protobuf.Timestamp UpdatedAt = 5;
+
+}
+message LoginRequest {
+    string email = 1;
+    string password = 2;
+}
+message RegisterRequest {
+    string email = 1;
+    string password = 2;
+    string password_confirmation = 3;
+    string name = 4;
+}
+message LoginResponse {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+    google.protobuf.Timestamp CreatedAt = 4;
+    google.protobuf.Timestamp UpdatedAt = 5;
+    string token = 7;
+}
+
+message RegisterResponse {
+    User user = 1;
+}
+service Users {
+    rpc Login(LoginRequest) returns (LoginResponse) {}
+    rpc Register(RegisterRequest) returns (RegisterResponse) {}
+}

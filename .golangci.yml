@@ -1,0 +1,40 @@
+run:
+  go: '1.19'
+  concurrency: 4
+  timeout: 1m
+  issues-exit-code: 1
+  tests: true
+
+linters-settings:
+  gocyclo:
+    # Needs to be consistent with pre commit config
+    min-complexity: 15
+
+  errorlint:
+    # Check whether fmt.Errorf uses the %w verb for formatting errors. See the readme for caveats
+    errorf: true
+    # Check for plain type assertions and type switches
+    asserts: true
+    # Check for plain error comparisons
+    comparison: true
+
+  gosec:
+    # To specify a set of rules to explicitly exclude.
+    # Available rules: https://github.com/securego/gosec#available-rules
+    excludes:
+      - G404
+
+linters:
+  enable:
+    - errcheck
+    - errorlint
+    - gocritic
+    - gocyclo
+    - gosec
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - typecheck
+    - unused
+  fast: true

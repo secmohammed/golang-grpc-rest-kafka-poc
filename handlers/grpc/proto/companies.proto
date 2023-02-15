@@ -1,0 +1,57 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "pb/companies";
+enum CompanyType {
+    Corporations = 0;
+    NonProfit = 1;
+    Cooperative = 2;
+    SoleProprietorship = 3;
+}
+message Company {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    int32 headcount = 4;
+    bool registered = 5;
+    CompanyType type = 6;
+    google.protobuf.Timestamp time = 7;
+}
+
+message GetCompaniesListRequest {
+    int32 page = 1;
+}
+message GetCompanyRequest { string id = 1;}
+message CreateCompanyRequest {
+    string name = 1;
+    string description = 2;
+    int32 headcount = 3;
+    bool registered = 4;
+    CompanyType type = 5;
+    string token = 6;
+}
+message UpdateCompanyRequest {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    int32 headcount = 4;
+    bool registered = 5;
+    CompanyType type = 6;
+    string token = 7;
+
+}
+message DeleteCompanyRequest {
+    string id = 1;
+    string token = 2;
+}
+message DeleteCompanyResponse { string message = 1;}
+message GetCompaniesListResponse { repeated Company companies = 1; }
+message GetCompanyResponse { Company company = 1;}
+
+service Companies {
+    rpc GetCompanyList(GetCompaniesListRequest) returns (GetCompaniesListResponse) {}
+    rpc GetCompany(GetCompanyRequest) returns (GetCompanyResponse) {}
+    rpc CreateCompany(CreateCompanyRequest) returns (GetCompanyResponse) {}
+    rpc UpdateCompany(UpdateCompanyRequest) returns (GetCompanyResponse) {}
+    rpc DeleteCompany(DeleteCompanyRequest) returns (DeleteCompanyResponse) {}
+}
