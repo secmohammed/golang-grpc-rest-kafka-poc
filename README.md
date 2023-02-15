@@ -117,3 +117,4 @@ to start testing users suite
 and for testing company suite
 > ENV=test go test -v ./tests/integration/company/...
 ```
+### TODO: add kafka producer/consumer
