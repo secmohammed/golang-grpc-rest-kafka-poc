@@ -5,33 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12319c78-1751-4e32-bb50-23766cadeb77" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.test.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handlers/rest/middleware/guest.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/integration/company/base.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/integration/company/create_company_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/integration/company/delete_company_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/integration/company/get_all_companies_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/integration/company/get_company_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/integration/company/update_company_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/integration/user/base.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/integration/user/login_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/integration/user/register_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/utils.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/repository/company/implementation.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/repository/company/implementation.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/usecase/company/implement.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/usecase/company/implement.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/usecase/user/implement.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/usecase/user/implement.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/local.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/local.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/port.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/port.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/company.go" beforeDir="false" afterPath="$PROJECT_DIR$/entities/company.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/rest/companies/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/rest/companies/handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/rest/users/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/rest/users/handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/rest.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/rest.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/bind_data.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/bind_data.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/errors.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/errors.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

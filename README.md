@@ -4,6 +4,9 @@ docker compose up
 ```
 - The application was designed to server gRPC and Rest API simultaneously, and we can configure through configuration which specifically to serve.
 - Port 8001 works for Rest API, Port 8002 works for gRPC
+- To test gRPC, you can  install grpcurl through ```sh brew install grpcurl ```
+
+>Register Request
 ```sh
 curl --location --request POST 'localhost:8001/api/auth/register' \
 --header 'Content-Type: application/json' \
@@ -13,7 +16,12 @@ curl --location --request POST 'localhost:8001/api/auth/register' \
     "password": "hello",
     "password_confirmation": "hello"
 }'
-
+grpcurl -d '{                                       
+    "name": "mohammed",
+    "email": "mohammedosama@ieee.org",
+    "password": "hello",
+    "password_confirmation": "hello"
+}' -plaintext localhost:8002 "Users.Register"
 
 
 ```
@@ -26,6 +34,11 @@ curl --location --request POST 'localhost:8001/api/auth/login' \
     "email": "mohammedosama@ieee.org",
     "password": "hello"
 }'
+
+grpcurl -d '{ 
+        "email": "mohammedosama@ieee.org",                                                                                                                                                          
+    "password": "hello"
+}' -plaintext localhost:8002 "Users.Login"
 ```
 >Get Companies
 ```shell
