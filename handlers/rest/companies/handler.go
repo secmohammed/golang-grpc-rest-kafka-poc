@@ -51,7 +51,7 @@ func (h *restHandler) GetCompany(c *gin.Context) {
 		c.JSON(http.StatusOK, SuccessResponse{Data: data})
 	} else {
 		if errors.Is(err, company2.ErrCompanyNotFound) {
-			c.JSON(http.StatusNotFound, utils.NewNotFound("company", fmt.Sprintf("%s", id)))
+			c.JSON(http.StatusNotFound, utils.NewNotFound("company", id.String()))
 		} else {
 			c.JSON(http.StatusInternalServerError, utils.NewInternal())
 		}
