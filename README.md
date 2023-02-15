@@ -4,7 +4,7 @@ docker compose up
 ```
 - The application was designed to server gRPC and Rest API simultaneously, and we can configure through configuration which specifically to serve.
 - Port 8001 works for Rest API, Port 8002 works for gRPC
-- To test gRPC, you can  install grpcurl through ```sh brew install grpcurl ```
+- To test gRPC, you can  install grpcurl through ```brew install grpcurl ```
 
 >Register Request
 ```sh
