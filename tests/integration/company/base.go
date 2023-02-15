@@ -13,6 +13,7 @@ import (
 	"github.com/secmohammed/golang-kafka-grpc-poc/handlers/rest/middleware"
 	"github.com/secmohammed/golang-kafka-grpc-poc/types"
 	"github.com/secmohammed/golang-kafka-grpc-poc/utils"
+	"log"
 	"time"
 )
 
@@ -20,7 +21,9 @@ var c = config.Factory("local")
 var app = container.NewApplication(c)
 
 func setup() types.Container {
-	app.Database().Get().Migrator().AutoMigrate(&entities.Company{}, &entities.User{})
+	if err := app.Database().Get().Migrator().AutoMigrate(&entities.Company{}, &entities.User{}); err != nil {
+		log.Fatal(err)
+	}
 	return app
 
 }
@@ -42,7 +45,9 @@ func router(c types.Container) *gin.Engine {
 
 }
 func teardown(c types.Container) {
-	c.Database().Get().Migrator().DropTable(&entities.Company{}, &entities.User{})
+	if err := c.Database().Get().Migrator().DropTable(&entities.Company{}, &entities.User{}); err != nil {
+		log.Fatal(err)
+	}
 }
 func getToken(u *entities.User) (string, error) {
 	c := app.Config()
