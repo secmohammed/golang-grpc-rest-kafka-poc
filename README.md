@@ -117,4 +117,6 @@ to start testing users suite
 and for testing company suite
 > ENV=test go test -v ./tests/integration/company/...
 ```
-### TODO: add kafka producer/consumer
+### For Kafka
+
+- for each event that's dispatched we are going to invoke the corresponding handler (for company CRUD and login/register) 

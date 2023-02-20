@@ -5,8 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12319c78-1751-4e32-bb50-23766cadeb77" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/pkg/kafka/kafka.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/kafka/kafka.test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/queue.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/usecase/company/implement.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/usecase/company/implement.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/usecase/user/implement.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/usecase/user/implement.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.test.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.test.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/container/container.go" beforeDir="false" afterPath="$PROJECT_DIR$/container/container.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/rest/companies/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/rest/companies/handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/all.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/all.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/grpc.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/grpc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/port.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/port.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/rest.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/rest.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/integration/company/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/tests/integration/company/base.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/integration/company/delete_company_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/tests/integration/company/delete_company_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/integration/user/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/tests/integration/user/base.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/types/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/types/types.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,28 +59,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "RunOnceActivity.go.vendoring.notification.had.been.shown": "true",
-    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/Users/mohammed/go/src/github.com/secmohammed/golang-kafka-grpc-poc",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.vendoring.notification.had.been.shown&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mohammed/go/src/github.com/secmohammed/golang-kafka-grpc-poc&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -77,7 +97,7 @@
       <recent name="$PROJECT_DIR$/companies/app/usecase/company" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestCannotCreateCompanyIfTokenNotPassed in github.com/secmohammed/golang-kafka-grpc-poc/tests/integration/company">
+  <component name="RunManager" selected="Docker.docker-compose.yaml.zookeeper: Compose Deployment">
     <configuration name="TestCannotCreateCompanyIfTokenNotPassed in github.com/secmohammed/golang-kafka-grpc-poc/tests/integration/company" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="golang-kafka-grpc-poc" />
       <working_directory value="$PROJECT_DIR$/tests/integration/company" />
@@ -115,8 +135,36 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yaml.kafka: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="kafka" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yaml.zookeeper: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="zookeeper" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yaml.zookeeper: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yaml.kafka: Compose Deployment" />
         <item itemvalue="Go Test.TestCannotCreateCompanyIfTokenNotPassed in github.com/secmohammed/golang-kafka-grpc-poc/tests/integration/company" />
         <item itemvalue="Go Test.TestLoginWithValidCredentials in github.com/secmohammed/golang-kafka-grpc-poc/tests/integration" />
         <item itemvalue="Docker.docker-compose.yaml.db: Compose Deployment" />

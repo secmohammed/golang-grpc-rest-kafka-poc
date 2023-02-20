@@ -98,9 +98,9 @@ func (g *grpcClient) Expose() error {
 		return err
 	}
 	ucr := user.NewUserRepository(g.c)
-	ucc := user2.NewUseCase(ucr, g.c.Config())
+	ucc := user2.NewUseCase(ucr, g.c.Config(), g.c.Queue())
 	cr := company.NewCompanyRepository(g.c)
-	uc := company2.NewUseCase(cr)
+	uc := company2.NewUseCase(cr, g.c.Queue())
 	companies.RegisterCompaniesServer(g.s, companies2.NewCompanyServer(uc, g.c.Config(), ucc))
 
 	users.RegisterUsersServer(g.s, users2.NewUserServer(ucc))

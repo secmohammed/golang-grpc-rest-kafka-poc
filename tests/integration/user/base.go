@@ -26,7 +26,7 @@ func setup() types.Container {
 func router(c types.Container) *gin.Engine {
 	r := gin.New()
 	uc := user.NewUserRepository(c)
-	ucc := user2.NewUseCase(uc, c.Config())
+	ucc := user2.NewUseCase(uc, c.Config(), c.Queue())
 	uh := users.NewUserHandler(ucc)
 	rg := r.Group("/api/auth")
 	rg.POST("/login", middleware.GuestUser(), uh.Login)

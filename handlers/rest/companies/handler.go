@@ -47,7 +47,6 @@ func (h *restHandler) GetCompany(c *gin.Context) {
 
 	}
 	data, err := h.cu.Get(id)
-	fmt.Println(err)
 	if err == nil {
 		c.JSON(http.StatusOK, SuccessResponse{Data: data})
 	} else {
