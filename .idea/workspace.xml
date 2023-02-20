@@ -5,28 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12319c78-1751-4e32-bb50-23766cadeb77" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pkg/kafka/kafka.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/kafka/kafka.test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/queue.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/usecase/company/implement.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/usecase/company/implement.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/usecase/user/implement.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/usecase/user/implement.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.test.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.test.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/container/container.go" beforeDir="false" afterPath="$PROJECT_DIR$/container/container.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handlers/rest/companies/handler.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/rest/companies/handler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/all.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/all.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/grpc.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/grpc.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/port.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/port.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/rest.go" beforeDir="false" afterPath="$PROJECT_DIR$/routes/rest.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/integration/company/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/tests/integration/company/base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/integration/company/delete_company_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/tests/integration/company/delete_company_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/integration/user/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/tests/integration/user/base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/types/types.go" beforeDir="false" afterPath="$PROJECT_DIR$/types/types.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/queueing/kafka.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/queueing/kafka.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
