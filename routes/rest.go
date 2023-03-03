@@ -80,7 +80,7 @@ func setupDefaults(r *gin.Engine) {
 
 func (r *rest) registerUserRoutes() {
 	uc := user.NewUserRepository(r.c)
-	ucc := user2.NewUseCase(uc, r.c.Config())
+	ucc := user2.NewUseCase(uc, r.c.Config(), r.c.Queue())
 	uh := users.NewUserHandler(ucc)
 	rg := r.r.Group("/api/auth")
 	rg.POST("/login", middleware.GuestUser(), uh.Login)
@@ -89,10 +89,10 @@ func (r *rest) registerUserRoutes() {
 }
 func (r *rest) registerCompanyRoutes() {
 	ucr := user.NewUserRepository(r.c)
-	ucc := user2.NewUseCase(ucr, r.c.Config())
+	ucc := user2.NewUseCase(ucr, r.c.Config(), r.c.Queue())
 
 	cr := company.NewCompanyRepository(r.c)
-	uc := company2.NewUseCase(cr)
+	uc := company2.NewUseCase(cr, r.c.Queue())
 	ch := companies.NewCompanyHandler(uc)
 	rg := r.r.Group("/api/companies")
 	rg.POST("/", middleware.AuthUser(ucc, r.c.Config()), ch.CreateCompany)

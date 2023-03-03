@@ -8,15 +8,18 @@ import (
 type Type string
 
 const (
-	REST Type = "rest"
-	GRPC Type = "grpc"
-	ALL  Type = "all"
+	REST  Type = "rest"
+	GRPC  Type = "grpc"
+	ALL   Type = "all"
+	QUEUE Type = "queue"
 )
 
 // Factory returns the requested config repo
 func Factory(t string, c types.Container) Repository {
 
 	switch Type(t) {
+	case QUEUE:
+		return NewMessagingQueueRepository(c)
 	case REST:
 		return NewRestRepository(c)
 	case GRPC:

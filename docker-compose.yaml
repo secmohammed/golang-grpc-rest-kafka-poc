@@ -1,5 +1,32 @@
 version: '3'
 services:
+  zookeeper:
+    hostname: zookeeper
+    networks:
+      - webnet
+    image: wurstmeister/zookeeper:3.4.6
+    expose:
+      - "2181"
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: wurstmeister/kafka
+    networks:
+      - webnet
+    hostname: ${KAFKA_HOSTNAME:-queueing}
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_HOST_NAME: ${KAFKA_HOSTNAME:-queueing}
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://${KAFKA_HOSTNAME:-queueing}:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
+      KAFKA_CONNECT_OFFSET_STORAGE_FILE_FILENAME: "/tmp/connect.offsets"
+    depends_on:
+      - zookeeper
+    ports:
+      - '9092:9092'
   db:
     networks:
       - webnet

@@ -17,6 +17,10 @@ app:
     port: "8001"
   grpc:
     port: "8002"
+  messaging:
+    port: "9092"
+    hosts:
+      - queueing
   log:
     json: true
     debug: false

@@ -1,12 +1,14 @@
 package user
 
 import (
+	"encoding/json"
 	"errors"
 	"fmt"
 	"github.com/google/uuid"
 	"github.com/secmohammed/golang-kafka-grpc-poc/app/repository/user"
 	"github.com/secmohammed/golang-kafka-grpc-poc/config"
 	"github.com/secmohammed/golang-kafka-grpc-poc/entities"
+	"github.com/secmohammed/golang-kafka-grpc-poc/pkg/queueing"
 	"github.com/secmohammed/golang-kafka-grpc-poc/utils"
 	"time"
 )
@@ -14,10 +16,11 @@ import (
 type usecase struct {
 	uc user.UserRepository
 	c  config.Repository
+	q  queueing.Messaging
 }
 
-func NewUseCase(uc user.UserRepository, c config.Repository) UseCase {
-	return &usecase{uc: uc, c: c}
+func NewUseCase(uc user.UserRepository, c config.Repository, q queueing.Messaging) UseCase {
+	return &usecase{uc: uc, c: c, q: q}
 }
 
 func (uc *usecase) Login(payload *entities.LoginUserInput) (*entities.UserLoginResponse, error) {
@@ -46,6 +49,10 @@ func (uc *usecase) Login(payload *entities.LoginUserInput) (*entities.UserLoginR
 	token, err := utils.GenerateToken(duration, result.ID, secret)
 	if err != nil {
 		return nil, utils.NewAuthorization("Failed to generate token")
+	}
+	userBytes, _ := json.Marshal(result)
+	if err := uc.q.Write("users", []byte("login"), userBytes); err != nil {
+		return nil, err
 	}
 	return &entities.UserLoginResponse{
 		BaseModel: entities.BaseModel{
@@ -82,6 +89,10 @@ func (uc *usecase) Create(payload *entities.RegisterUserInput) (*entities.User, 
 	user, err := uc.uc.Create(payload)
 	if err != nil {
 		return nil, utils.NewBadRequest(fmt.Sprintf("failed to create user: %s", err))
+	}
+	userBytes, _ := json.Marshal(user)
+	if err := uc.q.Write("users", []byte("register"), userBytes); err != nil {
+		return nil, err
 	}
 	return user, nil
 }
